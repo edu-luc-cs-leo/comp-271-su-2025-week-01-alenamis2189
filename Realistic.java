@@ -3,6 +3,14 @@ import java.util.Arrays; // for printing array
 /**
  * A class to demonstrate minimum heap operations using arrays
  */
+
+ /**
+  * Temporary is a new array that was created with an extra slot for the new integer.
+  * arr.length is the length of the original array and to create a new array we use arr.length + 1, which is the size of a new temporary array.
+  * So, temporary[arr.length] = value;, means that we are placing the new integer at the end of the temporary array.
+  * Therefore, arr.length refers to the last index of the temporary array, as it's one index larger in size.
+  */
+
 public class Realistic {
 
     /** Set up our test array. */
@@ -14,7 +22,10 @@ public class Realistic {
      * 
      * @return int with the smallest value in array arr
      */
-    public static int getSmallest() {
+    public static Integer getSmallest() {
+        if (arr.length == 0){
+            return null; // Return null when the array is empty
+        }
         // Assume smallest is first element
         int smallest_index = 0;
         // Scan the remaining elements, replacing the position of the smallest element
